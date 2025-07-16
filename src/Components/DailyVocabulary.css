@@ -1,0 +1,150 @@
+.daily-vocabulary {
+  position: relative;
+  margin-right: 1rem;
+}
+
+.vocab-btn {
+  background: #6c63ff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.vocab-btn:hover {
+  background: #5b52ee;
+}
+
+.vocab-popup {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  width: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  z-index: 100;
+  margin-top: 0.5rem;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.vocab-popup h4 {
+  margin-top: 0;
+  color: #6c63ff;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.vocab-popup ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.vocab-popup li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.vocab-popup li:last-child {
+  border-bottom: none;
+}
+
+.vocab-word {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 0.25rem;
+}
+
+.vocab-word:hover {
+  color: #6c63ff;
+}
+
+.vocab-word strong {
+  font-weight: 600;
+}
+
+.vocab-definition {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.speak-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0 0.5rem;
+}
+
+.loading-vocab {
+  text-align: center;
+  padding: 1rem 0;
+  color: #666;
+}
+
+/* Dark mode styles */
+.dark-mode .vocab-btn {
+  background: #4a6bff;
+}
+
+.dark-mode .vocab-btn:hover {
+  background: #3a5bef;
+}
+
+.dark-mode .vocab-popup {
+  background: #2a2a2a;
+  color: white;
+}
+
+.dark-mode .vocab-popup h4 {
+  color: #4a6bff;
+  border-color: #444;
+}
+
+.dark-mode .vocab-word:hover {
+  color: #4a6bff;
+}
+
+.dark-mode .vocab-definition {
+  color: #ccc;
+}
+.close-popup-btn {
+  display: block;
+  width: 20%;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  background: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.close-popup-btn:hover {
+  background: #5b52ee;
+}
+
+.dark-mode .close-popup-btn {
+  background: #4a6bff;
+}
+
+.dark-mode .close-popup-btn:hover {
+  background: #3a5bef;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,44 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  margin-bottom: 1.5rem;
+}
+
+header h1 {
+  margin: 0;
+  color: #4a6bff;
+}
+
+.header-controls {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.theme-toggle {
+  background: none;
+  
+  padding: 0.5rem 1rem;
+  
+  cursor: pointer;
+}
+
+/* Dark mode styles */
+.dark-mode header h1 {
+  color: #6c63ff;
+}
+
+.dark-mode .theme-toggle {
+  border-color: #555;
+}
+
+.theme-toggle .icon {
+  color: #4a6bff; 
+  transition: color 0.3s ease;
+}
+/* Dark mode styles */
+.dark-mode .theme-toggle .icon {
+  color: white; /* White color in dark mode */
+}

@@ -1,0 +1,122 @@
+/* Base Styles */
+.word-details {
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+.word-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 1.5rem;
+}
+
+.audio-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+}
+
+.audio-button:hover {
+  background-color: #e0e0e0;
+}
+
+.meanings-container {
+  display: grid;
+  gap: 2rem;
+}
+
+.meaning {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.meaning h3 {
+  margin-top: 0;
+  color: #2c3e50;
+}
+
+.meaning ul {
+  padding-left: 20px;
+}
+
+.meaning li {
+  margin-bottom: 1rem;
+}
+
+.phonetics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .word-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .meaning {
+    padding: 1.25rem;
+  }
+  
+  .audio-button {
+    font-size: 0.3rem;
+    width: 40px;
+    height: 40px;
+    margin-left: 0;
+    margin-top: 5px;
+  }
+  
+  .phonetics {
+    flex-direction: row;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .word-details {
+    padding: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  .audio-button {
+    font-size: 1.2rem;
+    width: 36px;
+    height: 36px;
+    padding: 6px;
+  }
+  
+  .meaning {
+    padding: 1rem;
+  }
+  
+  .meaning h3 {
+    font-size: 1.1rem;
+  }
+  
+  .meaning li {
+    font-size: 0.9rem;
+  }
+  
+  .phonetics {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}
