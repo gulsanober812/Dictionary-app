@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import axios from 'axios';
 import debounce from 'lodash.debounce';
 import { FaSearch } from "react-icons/fa";
@@ -7,26 +7,24 @@ import './SearchBar.css';
 const SearchBar = ({ word, setWord, loading, searchWord }) => {
   const [suggestions, setSuggestions] = useState([]);
 
-  const fetchSuggestions = useCallback(
-    debounce(async (value) => {
+  // Debounced suggestion fetcher
+  const debouncedFetch = useMemo(() => {
+    return debounce(async (value) => {
       if (!value) return setSuggestions([]);
       try {
-        const res = await axios.get(
-          `https://api.datamuse.com/sug?s=${value}`
-        );
+        const res = await axios.get(`https://api.datamuse.com/sug?s=${value}`);
         setSuggestions(res.data.slice(0, 8));
       } catch {
         setSuggestions([]);
       }
-    }, 300),
-    []
-  );
+    }, 300);
+  }, [setSuggestions]);
 
-  const handleChange = (e) => {
+  const handleChange = useCallback((e) => {
     const value = e.target.value;
     setWord(value);
-    fetchSuggestions(value.trim());
-  };
+    debouncedFetch(value.trim());
+  }, [setWord, debouncedFetch]);
 
   const choose = (w) => {
     setWord(w);
